@@ -29,7 +29,7 @@
   "jest": {
      "collectCoverage": true,
      "coverageReporters": ["json-summary"]
-  }.
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
