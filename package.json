@@ -28,7 +28,7 @@
   },
   "jest": {
     "collectCoverageFrom": ["./src/**/*.{js,jsx,ts,tsx}"],
-    "coverageReporters": ["json-summary", "lcov"],
+    "coverageReporters": ["json-summary", "lcov"]
   },
   "eslintConfig": {
     "extends": [
