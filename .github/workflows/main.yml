@@ -1,0 +1,13 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run Coverage
+      run: yarn test --coverage
+    - name: Update Coverage Badge
+      uses: we-cli/coverage-badge-action@main
