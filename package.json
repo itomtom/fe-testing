@@ -26,6 +26,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+     "collectCoverage": true,
+     "coverageReporters": ["json-summary"]
+  }.
   "eslintConfig": {
     "extends": [
       "react-app",
