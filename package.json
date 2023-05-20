@@ -27,7 +27,8 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "coverageReporters": ["json-summary", "lcov"]
+    "collectCoverageFrom": ["./src/**/*.{js,jsx,ts,tsx}"],
+    "coverageReporters": ["json-summary", "lcov"],
   },
   "eslintConfig": {
     "extends": [
