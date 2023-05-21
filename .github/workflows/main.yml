@@ -9,5 +9,6 @@ jobs:
       run: yarn
     - name: Run Coverage
       run: yarn test --coverage
-    - name: Update Coverage Badge
-      uses: we-cli/coverage-badge-action@main
+    - name: Add Coverage Badge
+      uses: jpb06/jest-badges-action@v1.9.14
+
