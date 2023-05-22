@@ -12,7 +12,7 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run Coverage
-      run: yarn test --coverage --coverageReporters="json-summary,lcov"
+      run: yarn test --coverage --coverageReporters='json-summary,lcov'
     - name: Generating coverage badges
       uses: jpb06/jest-badges-action@latest
       with:
