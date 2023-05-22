@@ -13,14 +13,14 @@ jobs:
       run: yarn
     - name: Run Coverage
       run: yarn test --coverage --coverageReporters="json-summary,lcov"
-    - name: Checkout gh-pages
-      uses: actions/checkout@v3
-      with:
-        ref: gh-pages
     - name: Generating coverage badges
       uses: jpb06/jest-badges-action@latest
       with:
          output-folder: './coverage/lcov-report/badges'
+    - name: Checkout gh-pages
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
     - name: Publish test coverage report
       uses: EndBug/add-and-commit@v4
       with:
