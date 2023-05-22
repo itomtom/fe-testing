@@ -1,16 +1,6 @@
 name: CI
 on: push
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-   contents: read
-   pages: write
-   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     environment:
@@ -22,6 +12,21 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run Coverage
-      run: yarn test --coverage
-    - name: Add Coverage Badge
-      uses: we-cli/coverage-badge-action@main
+      run: yarn test --coverage --coverageReporters"json-summary,lcov"
+    - name: Checkout gh-pages
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+    - name: Generating coverage badges
+      uses: jpb06/jest-badges-action@latest
+      with:
+         output-folder: './coverage/lcov-report/badges'
+    - name: Publish test coverage report
+      uses: EndBug/add-and-commit@v4
+      with:
+        add: './coverage/lcov-report'
+        force: true
+        message: Add code coverage report
+    - name: Run Build
+      run: yarn build
+      
