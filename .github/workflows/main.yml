@@ -25,13 +25,3 @@ jobs:
       run: yarn test --coverage
     - name: Add Coverage Badge
       uses: we-cli/coverage-badge-action@main
-    - name: Setup Pages
-      uses: actions/configure-pages@v2
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-        # Upload the coverage directory from the repository
-        path: './coverage/lcov-report'
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
